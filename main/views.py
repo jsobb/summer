@@ -1,3 +1,4 @@
+from django.db.models.query import InstanceCheckMeta
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Blog, Comment
 from django.utils import timezone
@@ -60,3 +61,18 @@ def create_comment(request, blog_id):
         comment_content = request.POST.get('content')
         Comment.objects.create(content=comment_content, writer=current_user, blog=blog)
     return redirect('main:detail', blog_id)
+
+def edit_comment(request, id):
+    edit_comment = Blog.objects.get(id=id)
+    return render(request, 'main/modify.html', {'comment':edit_comment})
+
+def delete_comment(request, id):
+    delete_comment = Blog.objects.get(id=id)
+    delete_comment.delete()
+    return redirect('main:posts')
+
+
+ 
+ 
+
+

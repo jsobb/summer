@@ -2,10 +2,13 @@
 {% load static %}
 
 {% block content %}
-<h1>2021 Dongguk Likelion session</h1>
+<div style="text-align: center">
+<h4 style="color: green"></h4>
+<h1>동대멋사 여름방학특집!</h1>
 
-<img src="{%static 'images/image01.jpg' %}" style="width: 100px;">
-<a href="{% url 'main:first' %}">first</a>
-<a href="{% url 'main:second' %}">second</a>
+
+<img src="{%static 'images/e-mail.jpg' %}" style="width: 300px;">
+<br>
+<a href="{% url 'main:first' %}">제가 궁금하면 눌러주세요</a>
 
 {% endblock %}

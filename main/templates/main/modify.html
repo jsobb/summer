@@ -1,0 +1,13 @@
+<div class="container">
+	<h1>댓글 수정하기</h1>
+	<form action="{%url 'main:edit_comment' Comment.id %}" method="post">
+		{%csrf_token%}
+		<div>
+            {% for comment in comments %}
+            <div>
+                작성자 : {{comment.wirter}}<br>
+                {{comment.content}}
+                <br><hr> 
+            </div>
+	</form>
+</div>
